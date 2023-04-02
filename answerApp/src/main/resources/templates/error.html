@@ -1,0 +1,16 @@
+<!-- All Rights Reserved, Copyright(c) Fujitsu Learning Media Limited -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+<title>エラー画面</title>
+</head>
+<body>
+	<h1>システムエラー</h1>
+	<hr>
+	<!--  エラーメッセージ -->
+	<p th:text="${message}" class="error">error message</p>
+	<div th:insert="footer::back2Top"></div>
+</body>
+</html>

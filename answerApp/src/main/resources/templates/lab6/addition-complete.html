@@ -1,0 +1,48 @@
+<!-- All Rights Reserved, Copyright(c) Fujitsu Learning Media Limited -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+<title>実習6</title>
+</head>
+<body>
+	<h1>新商品追加</h1>
+	<h2>新商品追加完了画面</h2>
+	<p>商品の登録が完了しました。</p>
+	<br>
+	<table border="1">
+		<tr>
+			<th>商品ID</th>
+			<td th:text="${newProduct.productId}">productId</td>
+		</tr>
+		<tr>
+			<th>商品名</th>
+			<td th:text="${newProduct.productName}">productName</td>
+		</tr>
+		<tr>
+			<th>カテゴリー名</th>
+			<td th:text="${newProduct.categoryName}">categoryName</td>
+		</tr>
+		<tr>
+			<th>単価</th>
+			<td class="digit" th:text="'\\' + ${newProduct.price}">price</td>
+		</tr>
+		<tr>
+			<th>商品画像</th>
+			<td>
+				<img th:src="@{'/img/' + ${newProduct.picture}}">
+			</td>
+		</tr>
+		<tr>
+			<th>ポイント</th>
+			<td class="digit" th:text="${newProduct.point} + 'pt'">point</td>
+		</tr>
+		<tr>
+			<th>在庫</th>
+			<td class="digit" th:text="${newProduct.quantity}">quantity</td>
+		</tr>
+	</table>
+	<div th:insert="footer::back2Top"></div>
+</body>
+</html>

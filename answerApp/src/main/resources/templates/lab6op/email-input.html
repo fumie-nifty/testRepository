@@ -1,0 +1,36 @@
+<!-- All Rights Reserved, Copyright(c) Fujitsu Learning Media Limited -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+<title>実習6（オプション）</title>
+</head>
+<body>
+	<h1>会員登録</h1>
+	<h2>メールアドレス入力画面</h2>
+	<p>メールアドレスを入力してください</p>
+	<p>メールアドレスが会員IDとなります</p>
+	<p th:text="${message}" class="error">error message</p>
+
+	<form th:object="${emailForm}" method="post"
+		th:action="@{/lab6op/inputMember}">
+		<table border="1">
+			<tr>
+				<th>
+					e-mail<br>
+					<span class="supplement">（例）abc@def.com</span>
+				</th>
+				<td>
+					<input type="text" th:field="*{email}" maxlength="40">
+					<div class="error" th:if="${#fields.hasErrors('email')}"
+						th:errors="*{email}">validation massage</div>
+				</td>
+			</tr>
+		</table>
+		<br>
+		<button type="submit">次へ</button>
+	</form>
+	<div th:insert="footer::back2Top"></div>
+</body>
+</html>

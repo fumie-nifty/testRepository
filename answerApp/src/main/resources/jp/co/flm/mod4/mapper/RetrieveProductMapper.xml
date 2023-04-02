@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- RetrieveProductMapper.xml -->
+<!-- All Rights Reserved, Copyright(c) Fujitsu Learning Media Limited -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jp.co.flm.mod4.mapper.RetrieveProductMapper">
+
+	<!-- カテゴリーID検索 -->
+	<select id="findAllBy" resultType="jp.co.flm.mod4.entity.Product">
+		SELECT
+			product.productId				AS productId,
+			product.productName			AS productName,
+			product.categoryId				AS categoryId,
+			category.categoryName		AS categoryName,
+			product.price						AS price,
+			stock.quantity						AS quantity
+		FROM
+			product
+		INNER JOIN
+			category
+		ON
+			product.categoryId = category.categoryId
+		INNER JOIN
+			stock
+		ON
+			product.productId = stock.productId
+		WHERE
+			product.categoryId = #{categoryId}
+		;
+	</select>
+
+	<!-- 商品ID検索 -->
+	<select id="findOne" resultType="jp.co.flm.mod4.entity.Product">
+		SELECT
+			product.productId				AS productId,
+			product.productName			AS productName,
+			product.categoryId				AS categoryId,
+			category.categoryName		AS categoryName,
+			product.price						AS price,
+			product.picture					AS picture,
+			product.point						AS point,
+			stock.quantity						AS quantity
+		FROM
+			product
+		INNER JOIN
+			category
+		ON
+			product.categoryId = category.categoryId
+		INNER JOIN
+			stock
+		ON
+			product.productId = stock.productId
+		WHERE
+			product.productId = #{productId}
+		;
+	</select>
+</mapper>

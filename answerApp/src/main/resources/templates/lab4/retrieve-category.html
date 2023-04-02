@@ -1,0 +1,23 @@
+<!-- All Rights Reserved, Copyright(c) Fujitsu Learning Media Limited -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+<title>実習4</title>
+</head>
+<body>
+	<h1>商品カテゴリー一覧</h1>
+	<div id="imgs">
+		<ul>
+			<li th:object="${category}" th:each="category : ${categoryList}">
+				<a th:href="@{'/lab5/retrieveProductsByCategory/' + *{categoryId}}">
+					<img th:src="@{'/img/' + *{picture}}">
+				</a>
+				<p th:text="*{categoryName}">categoryName</p>
+			</li>
+		</ul>
+	</div>
+	<div th:insert="footer::back2Top"></div>
+</body>
+</html>

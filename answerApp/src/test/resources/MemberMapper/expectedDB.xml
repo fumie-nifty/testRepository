@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<member memberId="aaa@fj.co.jp" password="flm123" memberName="渡邉 準" gender="M" address="東京都 大田区 蒲田0-0-0" phone="03-2222-3333" memberPoint="0" />
+	<member memberId="iida@fj.co.jp" password="flm123" memberName="飯田 哲夫" gender="M" address="東京都 大田区 池上0-0-0" phone="03-1111-2222" memberPoint="652" />
+	<member memberId="abc@def.com" password="flm123" memberName="富士通 太郎" gender="M" address="東京都港区港南2-13-34" phone="012-3456-7890" memberPoint="0" />
+</dataset>

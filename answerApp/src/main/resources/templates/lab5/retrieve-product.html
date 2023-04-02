@@ -1,0 +1,53 @@
+<!-- All Rights Reserved, Copyright(c) Fujitsu Learning Media Limited -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+<title>実習5</title>
+</head>
+<body>
+	<h1>商品検索</h1>
+	<h2>商品検索結果画面</h2>
+	<h3>
+		カテゴリー「 <span th:text="${productList[0].categoryName}">categoryName</span>
+		」に一致する商品が <span th:text="${#lists.size(productList)}">size</span>
+		件ありました。
+	</h3>
+	<p th:text="${message}" class="error">error message</p>
+
+	<table border="1">
+		<tr>
+			<th>商品ID</th>
+			<th>商品名</th>
+			<th>単価</th>
+			<th>在庫</th>
+			<th>詳細を見る</th>
+		</tr>
+
+		<th:block th:object="${product}" th:each="product : ${productList}">
+			<tr>
+				<td th:text="*{productId}">productId</td>
+				<td th:text="*{productName}">productName</td>
+				<td class="digit" th:text="'\\' + *{price}">price</td>
+				<td class="digit" th:text="*{quantity}">quantity</td>
+				<td>
+					<a th:href="@{'/lab5/retrieveProduct/' + *{productId}}">
+						<button>詳細</button>
+					</a>
+				</td>
+			</tr>
+		</th:block>
+	</table>
+	<br>
+	<p>
+		<a th:href="@{'/lab6/inputNewProduct?categoryId=' + ${productList[0].categoryId}}">
+			<button>商品追加</button>
+		</a>
+	</p>
+	<p>
+		<a th:href="@{/lab4/retrieveAllCategories}">[戻る]</a>
+	</p>
+	<div th:insert="footer::back2Top"></div>
+</body>
+</html>

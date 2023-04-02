@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- AddProductMapper.xml -->
+<!-- All Rights Reserved, Copyright(c) Fujitsu Learning Media Limited -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jp.co.flm.mod4.mapper.AddProductMapper">
+
+	<!-- 商品情報検索 -->
+	<select id="getLast" resultType="jp.co.flm.mod4.entity.Product">
+		SELECT
+			product.productId 		AS productId,
+			product.categoryId		AS categoryId,
+			category.categoryName	AS categoryName,
+			category.picture		AS picture
+		FROM
+			product
+		INNER JOIN
+			category
+		ON
+			product.categoryId = category.categoryId
+		WHERE
+			product.categoryId = #{categoryId}
+		ORDER BY
+			product.productId
+		DESC
+			limit 1
+		;
+	</select>
+
+	<!-- 商品登録 -->
+	<insert id="saveProduct">
+		INSERT INTO
+			product(
+				productId,
+				categoryId,
+				productName,
+				price,
+				picture,
+				point
+		) VALUES (
+			#{productId},
+			#{categoryId},
+			#{productName},
+			#{price},
+			#{picture},
+			#{point}
+		);
+	</insert>
+
+	<!-- 在庫登録 -->
+	<insert id="saveStock">
+		INSERT INTO
+			stock(
+				productId,
+				quantity
+		) VALUES (
+			#{productId},
+			#{quantity}
+		);
+	</insert>
+</mapper>

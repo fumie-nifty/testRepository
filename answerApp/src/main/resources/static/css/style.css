@@ -1,0 +1,107 @@
+/**
+ * style.css
+ *
+ * All Rights Reserved, Copyright Fujitsu Learning Media Limited
+ */
+
+@charset "UTF-8";
+
+body {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 10%;
+	padding-right: 10%;
+	font-family: "sans-serif", "Hiragino Kaku Gothic ProN", "meiryo";
+	font-size: 12pt;
+}
+
+img {
+	border-style: none;
+	border: 0;
+	width: 130px;
+	height: 130px;
+}
+
+a.header {
+	padding: 5px;
+	color: #ffffff;
+}
+
+h1 {
+	font-size: 15pt;
+	margin: 10px;
+	border-bottom: 3px solid #008040;
+	text-align: left;
+}
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse;
+	text-align: left;
+}
+
+caption {
+	text-align: left;
+	font-size: 13pt;
+	font-weight: bold;
+}
+
+th, td {
+	padding: 10px;
+	position: relative;
+}
+
+th {
+	background-color: #d0f9d3;
+}
+
+input {
+	font-size: 12pt;
+}
+
+button {
+	width: 100px;
+	height: 30px;
+	font-size: 12pt;
+	font-weight: bold;
+	background-color: #8aec8a;
+	border-radius: 5px;
+	border-color: #8aec8a;
+	border-style: none;
+}
+
+#imgs ul{
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+}
+
+#imgs li {
+	width: 10%;
+	flex-basis: 30%;
+}
+
+#footerArea {
+	margin-top: 30px;
+	border-top: 1px solid #008000;
+	text-align: center;
+}
+
+.menuButton {
+	width: 300px;
+	height: 50px;
+}
+
+.digit {
+	text-align: right;
+}
+
+.supplement {
+	font-size: 0.7em;
+}
+
+.error {
+	color: red
+}

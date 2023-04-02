@@ -1,0 +1,41 @@
+<!-- All Rights Reserved, Copyright(c) Fujitsu Learning Media Limited -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+<title>実習1</title>
+</head>
+<body>
+	<h1>会員情報照会</h1>
+	<h2>会員情報照会画面</h2>
+	<table border="1">
+		<tr>
+			<th>会員ID</th>
+			<td th:text="${member.memberId}">memberId</td>
+		</tr>
+		<tr>
+			<th>名前</th>
+			<td th:text="${member.memberName}">memberName</td>
+		</tr>
+		<tr>
+			<th>住所</th>
+			<td th:text="${member.address}">address</td>
+		</tr>
+		<tr>
+			<th>電話番号</th>
+			<td th:text="${member.phone}">phone</td>
+		</tr>
+		<tr>
+			<th>現在のポイント数</th>
+			<td class="digit" th:text="${member.memberPoint} + 'pt'">memberPoint</td>
+		</tr>
+	</table>
+	<p>
+		<a th:href="@{/lab1/logout}">
+			<button>ログアウト</button>
+		</a>
+	</p>
+	<div th:insert="footer::back2Top"></div>
+</body>
+</html>

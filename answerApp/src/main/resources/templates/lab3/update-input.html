@@ -1,0 +1,76 @@
+<!-- All Rights Reserved, Copyright(c) Fujitsu Learning Media Limited -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+<title>実習3</title>
+</head>
+<body>
+	<h1>会員更新</h1>
+	<h2>会員更新画面</h2>
+	<p>更新する会員情報を入力してください。</p>
+	<p>※は必須項目です。</p>
+	<p th:text="${message}" class="error">error message</p>
+
+	<form th:object="${updateMember}" method="post"
+		th:action="@{/lab3/confirmUpdate}">
+		<table border="1">
+			<tr>
+				<th>会員ID</th>
+				<td>
+					<p th:text="*{memberId}">memberId</p>
+					<input type="hidden" th:field="*{memberId}">
+				</td>
+			</tr>
+			<tr>
+				<th>
+					名前&nbsp;※<br>
+					<span class="supplement"> ※40文字以内<br>例：富士通 太郎</span>
+				</th>
+				<td>
+					<input type="text" th:field="*{memberName}" maxlength="40">
+					<div class="error" th:if="${#fields.hasErrors('memberName')}"
+						th:errors="*{memberName}">validation massage</div>
+				</td>
+			</tr>
+			<tr>
+				<th>性別&nbsp;※</th>
+				<td>
+					<input type="radio" th:field="*{gender}" value="M">男性
+					<input type="radio" th:field="*{gender}" value="F">女性
+					<div class="error" th:if="${#fields.hasErrors('gender')}"
+						th:errors="*{gender}">validation massage</div>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					住所&nbsp;※<br>
+					<span class="supplement"> ※80文字以内<br>例：東京都港区港南2-13-34</span>
+				</th>
+				<td>
+					<input type="text" th:field="*{address}" maxlength="80">
+					<div class="error" th:if="${#fields.hasErrors('address')}"
+						th:errors="*{address}">validation massage</div>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					電話番号&nbsp;※<br>
+					<span class="supplement">※ハイフン込み15文字以内<br>例：012-3456-7890</span>
+				</th>
+				<td>
+					<input type="text" th:field="*{phone}" maxlength="15">
+					<div class="error" th:if="${#fields.hasErrors('phone')}"
+						th:errors="*{phone}">validation massage</div>
+				</td>
+			</tr>
+		</table>
+		<br>
+		<input type="hidden" th:field="*{password}">
+		<input type="hidden" th:field="*{memberPoint}">
+		<button type="submit">確認</button>
+	</form>
+	<div th:insert="footer::back2Top"></div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!-- All Rights Reserved, Copyright(c) Fujitsu Learning Media Limited -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+<title>実習6（オプション）</title>
+</head>
+<body>
+	<h1>会員登録</h1>
+	<h2>会員登録完了画面</h2>
+	この度は、オンラインショップに会員登録頂き、誠にありがとうございました。
+	<br> 今後、オンラインショッピングをされるときに必要となりますので、
+	<br> 会員IDとパスワードはお忘れのないようにお願い致します。
+	<br>
+	<table border="1">
+		<tr>
+			<th>会員ID</th>
+			<td th:text="${member.memberId}">memberId</td>
+		</tr>
+		<tr>
+			<th>名前</th>
+			<td th:text="${member.memberName}">memberName</td>
+		</tr>
+		<tr>
+			<th>性別</th>
+			<td th:text="${member.gender=='M'}? '男性':'女性'">gender</td>
+		</tr>
+		<tr>
+			<th>住所</th>
+			<td th:text="${member.address}">address</td>
+		</tr>
+		<tr>
+			<th>電話番号</th>
+			<td th:text="${member.phone}">phone</td>
+		</tr>
+		<tr>
+			<th>現在のポイント</th>
+			<td class="digit" th:text="${member.memberPoint} + 'pt'">point</td>
+		</tr>
+	</table>
+	<div th:insert="footer::back2Top"></div>
+</body>
+</html>

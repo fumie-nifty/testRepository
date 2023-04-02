@@ -1,0 +1,79 @@
+<!-- All Rights Reserved, Copyright(c) Fujitsu Learning Media Limited -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+<title>実習6</title>
+</head>
+<body>
+	<h1>新商品追加</h1>
+	<h2>新商品追加画面</h2>
+	<p>追加する商品情報を入力してください。</p>
+	<p>※は必須項目です。</p>
+
+	<form th:object="${newProduct}" method="post"
+		th:action="@{/lab6/confirmAddition}">
+		<table border="1">
+			<tr>
+				<th>商品ID</th>
+				<td>
+					<p th:text="*{productId}">productId</p>
+					<input type="hidden" th:field="*{productId}">
+				</td>
+			</tr>
+			<tr>
+				<th>
+					商品名&nbsp;※<br>
+					<span class="supplement">※40文字以下</span>
+				</th>
+				<td>
+					<input type="text" th:field="*{productName}" maxlength="40">
+					<div class="error" th:if="${#fields.hasErrors('productName')}"
+						th:errors="*{productName}">validation massage</div>
+				</td>
+			</tr>
+			<tr>
+				<th>カテゴリー名</th>
+				<td>
+					<p th:text="*{categoryName}">categoryName</p>
+					<input type="hidden" th:field="*{categoryId}">
+					<input type="hidden" th:field="*{categoryName}">
+				</td>
+			</tr>
+			<tr>
+				<th>
+					単価&nbsp;※<br>
+					<span class="supplement">※最大\9,999,999</span>
+				</th>
+				<td>
+					<input type="text" th:field="*{price}" maxlength="7">
+					<div class="error" th:if="${#fields.hasErrors('price')}"
+						th:errors="*{price}">validation massage</div>
+				</td>
+			</tr>
+			<tr>
+				<th>商品画像</th>
+				<td>
+					<img th:src="@{'/img/' + *{picture}}">
+					<input type="hidden" th:field="*{picture}">
+				</td>
+			</tr>
+			<tr>
+				<th>
+					在庫&nbsp;※<br>
+					<span class="supplement">※最大100</span>
+				</th>
+				<td>
+					<input type="text" th:field="*{quantity}" maxlength="3">
+					<div class="error" th:if="${#fields.hasErrors('quantity')}"
+						th:errors="*{quantity}">validation massage</div>
+				</td>
+			</tr>
+		</table>
+		<br>
+		<button type="submit">確認</button>
+	</form>
+	<div th:insert="footer::back2Top"></div>
+</body>
+</html>

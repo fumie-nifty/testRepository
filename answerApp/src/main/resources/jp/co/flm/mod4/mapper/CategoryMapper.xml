@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- CategoryMapper.xml -->
+<!-- All Rights Reserved, Copyright(c) Fujitsu Learning Media Limited -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jp.co.flm.mod4.mapper.CategoryMapper">
+
+	<!-- 全件検索 -->
+	<select id="findAll" resultType="jp.co.flm.mod4.entity.Category">
+		SELECT
+			categoryId, categoryName, picture
+		FROM
+			category;
+	</select>
+</mapper>

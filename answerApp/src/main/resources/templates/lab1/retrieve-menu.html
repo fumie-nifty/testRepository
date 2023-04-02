@@ -1,0 +1,25 @@
+<!-- All Rights Reserved, Copyright(c) Fujitsu Learning Media Limited -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+<title>実習1</title>
+</head>
+<body>
+	<h1>会員情報照会</h1>
+	<h2>メニュー画面</h2>
+	<p>機能を選んでください</p>
+	<p>
+		<a th:href="@{/lab1/login}">
+			<button class="menuButton">会員情報照会</button>
+		</a>
+	</p>
+	<p>
+		<a th:href="@{/lab4/retrieveAllCategories}">
+			<button disabled class="menuButton">商品検索</button>
+		</a>
+	</p>
+	<div th:insert="footer::back2Top"></div>
+</body>
+</html>

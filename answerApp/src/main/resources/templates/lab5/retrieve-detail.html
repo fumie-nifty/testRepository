@@ -1,0 +1,48 @@
+<!-- All Rights Reserved, Copyright(c) Fujitsu Learning Media Limited -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+<title>実習5</title>
+</head>
+<body>
+	<h1>商品検索</h1>
+	<h2>商品詳細画面</h2>
+	<p>
+		<img th:src="@{'/img/' + ${product.picture}}">
+	</p>
+	<table border="1">
+		<tr>
+			<th>商品ID</th>
+			<td th:text="${product.productId}">productId</td>
+		</tr>
+		<tr>
+			<th>カテゴリー</th>
+			<td th:text="${product.categoryName}">categoryName</td>
+		</tr>
+		<tr>
+			<th>商品名</th>
+			<td th:text="${product.productName}">productName</td>
+		</tr>
+		<tr>
+			<th>単価</th>
+			<td class="digit" th:text="'\\' + ${product.price}">price</td>
+		</tr>
+		<tr>
+			<th>ポイント</th>
+			<td class="digit" th:text="${product.point} + 'pt'">point</td>
+		</tr>
+		<tr>
+			<th>在庫</th>
+			<td class="digit" th:text="${product.quantity}">quantity</td>
+		</tr>
+	</table>
+	<p>
+		<a th:href="@{'/lab5/retrieveProductsByCategory/' + ${product.categoryId}}">
+			[商品検索結果に戻る]
+		</a>
+	</p>
+	<div th:insert="footer::back2Top"></div>
+</body>
+</html>

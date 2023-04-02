@@ -1,0 +1,30 @@
+<!-- All Rights Reserved, Copyright(c) Fujitsu Learning Media Limited -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+<title>実習1</title>
+</head>
+<body>
+	<h1>会員情報照会</h1>
+	<h2>ログイン画面</h2>
+	<p th:text="${message}" class="error">error message</p>
+
+	<form method="post" th:action="@{/lab1/retrieveMember}">
+		<table>
+			<tr>
+				<td>会員ID</td>
+				<td><input type="email" name="memberId" required></td>
+			</tr>
+			<tr>
+				<td>パスワード</td>
+				<td><input type="password" name="password" required></td>
+			</tr>
+		</table>
+		<br>
+		<button type="submit">ログイン</button>
+	</form>
+	<div th:insert="footer::back2Top"></div>
+</body>
+</html>

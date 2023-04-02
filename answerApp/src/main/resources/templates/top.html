@@ -1,0 +1,49 @@
+<!-- All Rights Reserved, Copyright(c) Fujitsu Learning Media Limited -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+<title>実習解答一覧画面</title>
+</head>
+<body>
+	<h1>実習一覧</h1>
+	<br>
+	<table border="1">
+		<caption>3章：Spring MVC</caption>
+		<tr>
+			<th><a th:href="@{/lab1/menu}">実習1</a></th>
+			<td>Controller-View連携</td>
+		</tr>
+		<tr>
+			<th><a th:href="@{/lab2/login}">実習2</a></th>
+			<td>フォームオブジェクト・入力チェック</td>
+		</tr>
+		<tr>
+			<th><a th:href="@{/lab3/inputUpdate}">実習3</a></th>
+			<td>例外処理・セッション管理</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<table border="1">
+		<caption>4章：SpringとMyBaisの連携</caption>
+		<tr>
+			<th><a th:href="@{/lab4/retrieveAllCategories}">実習4</a></th>
+			<td>参照系DBアクセス（全件検索）</td>
+		</tr>
+		<tr>
+			<th><a th:href="@{/lab5/retrieveProductsByCategory/a}">実習5</a></th>
+			<td>参照系DBアクセス（条件検索）・列別名を使用したマッピング</td>
+		</tr>
+		<tr>
+			<th><a th:href="@{/lab6/inputNewProduct?categoryId=a}">実習6</a></th>
+			<td>更新系DBアクセス・トランザクション・セッション管理</td>
+		</tr>
+		<tr>
+			<th><a th:href="@{/lab6op/inputEmail}">実習6（オプション）</a></th>
+			<td>更新系DBアクセス・セッション管理</td>
+		</tr>
+	</table>
+</body>
+</html>

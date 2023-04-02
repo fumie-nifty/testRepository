@@ -1,0 +1,46 @@
+<!-- All Rights Reserved, Copyright(c) Fujitsu Learning Media Limited -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+<title>実習3</title>
+</head>
+<body>
+	<h1>会員更新</h1>
+	<h2>会員更新確認画面</h2>
+	<p>以下の内容でよろしければ更新確定ボタンを押してください。</p>
+	<table border="1">
+		<tr>
+			<th>会員ID</th>
+			<td th:text="${updateMember.memberId}">memberId</td>
+		</tr>
+		<tr>
+			<th>名前</th>
+			<td th:text="${updateMember.memberName}">memberName</td>
+		</tr>
+		<tr>
+			<th>性別</th>
+			<td th:text="${updateMember.gender=='M'}? '男性':'女性'">gender</td>
+		</tr>
+		<tr>
+			<th>住所</th>
+			<td th:text="${updateMember.address}">address</td>
+		</tr>
+		<tr>
+			<th>電話番号</th>
+			<td th:text="${updateMember.phone}">phone</td>
+		</tr>
+	</table>
+	<br>
+	<form method="post" th:action="@{/lab3/commitUpdate}">
+		<button type="submit">更新確定</button>
+	</form>
+	<p>
+		<a th:href="@{/lab3/reviseInput}">
+			<button>修正</button>
+		</a>
+	</p>
+	<div th:insert="footer::back2Top"></div>
+</body>
+</html>
