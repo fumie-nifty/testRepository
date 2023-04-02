@@ -23,8 +23,9 @@ public class TopController {
 	 */
 	@RequestMapping("/")
 	public String handler() {
-		
-		System.out.println("sss");
+
+		System.out.println("sss11");
+		System.out.println("sss11");
 
 		return "/top";
 	}
