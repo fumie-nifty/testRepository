@@ -15,6 +15,7 @@ import lombok.NoArgsConstructor;
  * 会員情報を管理するエンティティクラス
  * @author FLM
  * @version 1.0 yyyy/mm/dd
+ * tttt
  */
 @Data
 @NoArgsConstructor
